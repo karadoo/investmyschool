@@ -1,0 +1,245 @@
+@charset 'UTF-8';
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Roboto, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.25;
+	text-align: center;
+	color: #fff;
+	background: url(../images/bg-crayons.jpeg);
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+/* ~~ Element/tag selectors ~~ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+input,
+button,
+label,
+form {
+	font-size: inherit;
+	font-weight: normal;
+	margin: 0;	/* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+}
+a img {
+	/* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.ims-Site {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+.ims-Site__Content {
+	padding: 1em 1em 6em;
+}
+.ims-Site__Header {
+	width: 100%;
+	max-width: 20em;
+	padding: 2em;
+}
+.ims-BrandLogo {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.ims-Headline {
+	text-transform: uppercase;
+}
+.ims-Headline::after {
+	content: ' ';
+	display: block;
+	width: 100px;
+	height: 1px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.ims-Headline__Small {
+	font-weight: 900;
+}
+.ims-Headline__Large {
+	font-family: 'Alfa Slab One', Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 3em;
+	line-height: 1;
+	display: block;
+	padding: 0.375em 0;
+	letter-spacing: 0.05em;
+}
+.ims-Body {
+	line-height: 1.4;
+	max-width: 25em;
+	margin: 0 auto;
+	padding: 4em 0;
+}
+.ims-Form {
+}
+.ims-Form__Hint {
+	display: block;
+}
+.ims-Form__Wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.ims-Button,
+.ims-Input {
+	-webkit-appearance: none;
+	font-family: inherit;
+	font-weight: inherit;
+	-webkit-text-size-adjust: none;
+	line-height: 1;
+	display: block;
+	width: 100%;
+	min-height: 44px;
+	vertical-align: middle;
+	text-decoration: none;
+	border: none;
+	border-radius: 0;
+}
+.ims-Input {
+	width: 100%;
+	min-width: 250px;
+	max-width: 400px;
+	padding: 1em;
+	text-align: left;
+	opacity: 0.85;
+}
+.ims-Button {
+	flex: none;
+	margin-top: 1px;
+	padding: 1em 2em;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #ff6c00;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+	text-decoration: none;
+	color: #fff !important;
+}
+.ims-Button:hover {
+	cursor: pointer;
+	background-color: #61c7dd;
+}
+.ims-Form__Label {
+	font-weight: 900;
+	display: block;
+	padding-bottom: 2em;
+	text-transform: uppercase;
+}
+.ims-Site__Footer {
+	width: 100%;
+	padding: 2em 1em;
+	text-align: left;
+	background: #242424;
+}
+.ims-Footer__Container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.ims-Footer__Heading {
+	font-size: 2em;
+	font-weight: 900;
+	padding-bottom: 1em;
+	text-transform: uppercase;
+}
+.ims-Contact {
+	text-align: left;
+}
+.ims-List__Label,
+.ims-List__Item {
+	float: left;
+	clear: both;
+}
+.ims-List__Label {
+	font-weight: 400;
+	text-transform: uppercase;
+}
+.ims-List__Item {
+	display: block;
+	padding-bottom: 1em;
+}
+.ims-Logo {
+	width: 80px;
+	padding-top: 2em;
+}
+@media screen and (min-width: 840px) {
+	.ims-Headline__Small {
+		font-size: 1em;
+	}
+	.ims-Headline__Large {
+		font-size: 4em;
+	}
+	.ims-Body {
+		font-size: 2em;
+	}
+	.ims-Form__Wrap {
+		flex-direction: row;
+		align-items: stretch;
+	}
+	.ims-Button {
+		width: auto;
+		margin-top: 0;
+	}
+	.ims-List__Item {
+		padding-bottom: 0;
+		padding-left: 1em;
+	}
+	.ims-List__Label,
+	.ims-List__Item {
+		float: none;
+		clear: none;
+	}
+	.ims-Footer__Container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	.ims-Site__Footer {
+		padding: 5em 1em 8em;
+	}
+	.ims-Logo {
+		padding-top: 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.ims-Headline__Large {
+		font-size: 7em;
+	}
+}
