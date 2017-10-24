@@ -2,7 +2,6 @@
 
 * {
 	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
 
@@ -13,12 +12,12 @@ body {
 }
 
 body {
-	font-family: Roboto, Tahoma, Arial, Helvetica, sans-serif;
+	font-family: 'Open Sans', Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 100%;
 	line-height: 1.25;
 	text-align: center;
 	color: #fff;
-	background: url(../images/bg-crayons.jpeg);
+	background: url(../images/bg-business.jpg);
 	background-color: #000;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -45,7 +44,7 @@ label,
 form {
 	font-size: inherit;
 	font-weight: normal;
-	margin: 0;	/* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	margin: 0; /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
 }
 a img {
@@ -54,10 +53,19 @@ a img {
 }
 /* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
 .ims-Site {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	min-height: 100vh;
 }
 .ims-Site__Content {
@@ -73,7 +81,6 @@ a img {
 	width: 100%;
 	height: auto;
 }
-
 .ims-Headline {
 	text-transform: uppercase;
 }
@@ -86,15 +93,14 @@ a img {
 	background-color: #fff;
 }
 .ims-Headline__Small {
-	font-weight: 900;
+	font-weight: 700;
 }
 .ims-Headline__Large {
-	font-family: 'Alfa Slab One', Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 3em;
+	font-weight: 700;
 	line-height: 1;
 	display: block;
 	padding: 0.375em 0;
-	letter-spacing: 0.05em;
 }
 .ims-Body {
 	line-height: 1.4;
@@ -108,10 +114,19 @@ a img {
 	display: block;
 }
 .ims-Form__Wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 .ims-Button,
 .ims-Input {
@@ -137,7 +152,9 @@ a img {
 	opacity: 0.85;
 }
 .ims-Button {
-	flex: none;
+	-webkit-box-flex: 0;
+	    -ms-flex: none;
+	        flex: none;
 	margin-top: 1px;
 	padding: 1em 2em;
 	text-align: center;
@@ -157,7 +174,7 @@ a:visited {
 	background-color: #61c7dd;
 }
 .ims-Form__Label {
-	font-weight: 900;
+	font-weight: 700;
 	display: block;
 	padding-bottom: 2em;
 	text-transform: uppercase;
@@ -174,7 +191,7 @@ a:visited {
 }
 .ims-Footer__Heading {
 	font-size: 2em;
-	font-weight: 900;
+	font-weight: 700;
 	padding-bottom: 1em;
 	text-transform: uppercase;
 }
@@ -198,6 +215,10 @@ a:visited {
 	width: 80px;
 	padding-top: 2em;
 }
+.ims-Body--Small {
+	font-size: 0.75em;
+	display: block;
+}
 @media screen and (min-width: 840px) {
 	.ims-Headline__Small {
 		font-size: 1em;
@@ -209,8 +230,13 @@ a:visited {
 		font-size: 2em;
 	}
 	.ims-Form__Wrap {
-		flex-direction: row;
-		align-items: stretch;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-align: stretch;
+		    -ms-flex-align: stretch;
+		        align-items: stretch;
 	}
 	.ims-Button {
 		width: auto;
@@ -226,9 +252,15 @@ a:visited {
 		clear: none;
 	}
 	.ims-Footer__Container {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 	}
 	.ims-Site__Footer {
 		padding: 5em 1em 8em;
@@ -237,9 +269,8 @@ a:visited {
 		padding-top: 0;
 	}
 }
-
 @media screen and (min-width: 1200px) {
 	.ims-Headline__Large {
-		font-size: 7em;
+		font-size: 5em;
 	}
 }
